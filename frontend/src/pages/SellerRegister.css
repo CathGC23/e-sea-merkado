@@ -1,0 +1,142 @@
+/* Background Container */
+.sellerreg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* same gradient */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  padding: 20px;
+}
+
+/* Card */
+.sellerreg-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Heading */
+.sellerreg-card h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.sellerreg-subtext {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+/* Form */
+.sellerreg-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sellerreg-card label {
+  text-align: left;
+  font-weight: 500;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.sellerreg-card input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sellerreg-card input::placeholder {
+  color: #ddd;
+}
+
+.sellerreg-card input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Button */
+.sellerreg-btn {
+  padding: 12px;
+  background: #34238b;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sellerreg-btn:hover {
+  background: #2d115b;
+  transform: translateY(-2px);
+}
+
+/* Message */
+.sellerreg-message {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #ffe066;
+}
+
+/* Link */
+.sellerreg-link {
+  font-size: 0.9rem;
+  color: #cce6ff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.sellerreg-link:hover {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .sellerreg-card {
+    padding: 30px 20px;
+  }
+
+  .sellerreg-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .sellerreg-btn {
+    font-size: 1rem;
+  }
+
+  .sellerreg-link {
+    font-size: 0.85rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

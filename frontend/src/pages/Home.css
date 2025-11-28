@@ -1,0 +1,283 @@
+/* Base wrapper with enhanced modern styling */
+.home-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Enhanced gradient overlay with smoother transition */
+.home-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 17, 78, 0.5) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(33, 20, 96, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Header with smooth entrance animation */
+.home-header {
+  width: 100%;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  animation: slideDown 0.8s ease-out;
+  margin-bottom: -2rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo with subtle hover effect */
+.home-logo {
+  width: 240px;
+  height: auto;
+  z-index: 2;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.home-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+}
+
+/* Main content area */
+.home-main {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  gap: 4rem;
+}
+
+/* Content container with fade-in animation */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  margin-top: -2.5rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced title with modern gradient text */
+.home-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #a8c0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Modern subtitle with enhanced readability */
+.home-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  margin: 0;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.03em;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+/* Modern glassmorphic button */
+.get-started-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out 0.4s both;
+  letter-spacing: 0.05em;
+}
+
+/* Button hover shine effect */
+.get-started-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.get-started-btn:hover::before {
+  left: 100%;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(33, 20, 96, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(33, 20, 96, 0.5);
+}
+
+.get-started-btn:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) {
+  .home-header {
+    padding: 1.5rem 1.25rem 0 1.25rem;
+    margin-bottom: -1.5rem;
+  }
+
+  .home-main {
+    gap: 2.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Mobile landscape and small tablets */
+@media (max-width: 768px) {
+  .home-header {
+    padding: 1rem 1rem 0 1rem;
+    margin-bottom: -2rem;
+  }
+
+  .home-logo {
+    width: 160px;
+  }
+
+  .home-main {
+    gap: 2rem;
+    padding: 1rem 1rem;
+  }
+
+  .home-content {
+    gap: 0.4rem;
+    margin-top: -3rem;
+  }
+
+  .get-started-btn {
+    padding: 0.875rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .home-header {
+    padding: 0.75rem 0.75rem 0 0.75rem;
+    margin-bottom: -2.5rem;
+  }
+
+  .home-logo {
+    width: 140px;
+  }
+
+  .home-main {
+    gap: 1.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .home-content {
+    gap: 0.3rem;
+    margin-top: -3.5rem;
+  }
+
+  .get-started-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-width: 1.5px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .home-header {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin-bottom: -3rem;
+  }
+
+  .home-logo {
+    width: 120px;
+  }
+
+  .home-content {
+    gap: 0.25rem;
+    margin-top: -4rem;
+  }
+
+  .get-started-btn {
+    padding: 0.7rem 1.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Ensure smooth transitions on all interactive elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

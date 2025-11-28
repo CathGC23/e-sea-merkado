@@ -1,0 +1,116 @@
+.role-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../assets/front.jpg'); /* Mobile default */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+/* Desktop background override */
+@media screen and (min-width: 768px) {
+  .role-container {
+    background-image: url('../assets/front_landscape.jpg');
+  }
+}
+
+.role-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.role-header {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.role-logo {
+  width: 240px; /* Bigger logo */
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.role-tagline {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.role-card {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  max-width: 340px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.role-prompt {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.role-btn {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  background: #14114e; /* Deep navy */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.role-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .role-logo {
+    width: 180px;
+  }
+
+  .role-tagline {
+    font-size: 1rem;
+  }
+
+  .role-prompt {
+    font-size: 1.2rem;
+  }
+
+  .role-btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}

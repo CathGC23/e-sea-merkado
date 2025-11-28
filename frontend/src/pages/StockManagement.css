@@ -1,0 +1,284 @@
+.stock-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.stock-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e3c72;
+  text-align: center;
+  border-bottom: 2px solid #1e3c72;
+  padding-bottom: 8px;
+}
+
+/* Alert banner */
+.alert-banner {
+  margin: 15px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.alert-banner.info {
+  background: #e7f1ff;
+  color: #1e3c72;
+  border: 1px solid #a3c4f7;
+}
+
+.alert-banner.success {
+  background: #e6f9ed;
+  color: #2e7d32;
+  border: 1px solid #81c784;
+}
+
+.alert-banner.error {
+  background: #fdecea;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+.stock-table th,
+.stock-table td {
+  padding: 12px 14px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.stock-table th {
+  background: #1e3c72;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.stock-table tr:nth-child(even) {
+  background: #f9fbfd;
+}
+
+.stock-table tr:hover {
+  background: #eef2f9;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-style: italic;
+}
+
+/* Stock indicators */
+.stock-cell.high {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.stock-cell.low {
+  color: #ffc107;
+  font-weight: 500;
+}
+
+.stock-cell.critical {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Editing row */
+.editing-row {
+  background: #fff8e1 !important;
+}
+
+/* Edit input group */
+.edit-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stock-input,
+.price-input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 80px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.stock-input:focus,
+.price-input:focus {
+  border-color: #2a5298;
+}
+
+.unit-label,
+.currency-symbol {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Action buttons */
+.action-cell {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.update-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.update-btn {
+  background: #34238b;
+  color: #fff;
+}
+
+.update-btn:hover {
+  background: #2d115b;
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: #dc3545;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #b52a37;
+  transform: translateY(-2px);
+}
+
+/* Stock summary */
+.stock-summary {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  flex: 1;
+  min-width: 180px;
+  background: #f4f6f9;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-2px);
+}
+
+.summary-label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.summary-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #161c3d;
+}
+
+/* Distinct styles */
+.summary-item.total {
+  border-left: 5px solid #2a5298;
+  background: #e7f1ff;
+}
+
+.summary-item.critical {
+  border-left: 5px solid #dc3545;
+  background: #fdecea;
+}
+
+.summary-item.low {
+  border-left: 5px solid #ffc107;
+  background: #fff8e1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stock-table th,
+  .stock-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .update-btn,
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+
+  .summary-item {
+    min-width: 100%;
+  }
+}

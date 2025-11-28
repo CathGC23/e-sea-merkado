@@ -1,0 +1,144 @@
+.buyer-register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.buyer-register-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.buyer-register-card h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.buyer-register-card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+}
+
+.buyer-register-card label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.buyer-register-card input {
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.buyer-register-card input::placeholder {
+  color: #ccc;
+}
+
+.buyer-register-card input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.buyer-register-card form > label:nth-last-child(-n+2),
+.buyer-register-card form > input:nth-last-child(-n+2),
+.buyer-register-btn,
+.buyer-register-message,
+.buyer-register-link {
+  grid-column: span 2;
+}
+
+.buyer-register-btn {
+  padding: 10px;
+  font-size: 0.9rem;
+  background: #34238b;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.buyer-register-btn:hover {
+  background: #2d115b;
+  transform: translateY(-2px);
+}
+
+.buyer-register-message {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #ffe066;
+  text-align: center;
+}
+
+.buyer-register-link {
+  font-size: 0.85rem;
+  color: #cce6ff;
+  text-decoration: underline;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.buyer-register-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .buyer-register-card {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+
+  .buyer-register-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .buyer-register-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .buyer-register-card input {
+    font-size: 0.8rem;
+    padding: 9px 10px;
+  }
+
+  .buyer-register-btn {
+    font-size: 0.85rem;
+  }
+
+  .buyer-register-link {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
